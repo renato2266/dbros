@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ambito criminale:</strong>
+  <%= @ambit.ambito_criminale %>
+</p>
+
+<p>
+  <strong>Note ambito:</strong>
+  <%= @ambit.note_ambito %>
+</p>
+
+<%= link_to 'Edit', edit_ambit_path(@ambit) %> |
+<%= link_to 'Back', ambits_path %>

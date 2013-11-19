@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gruppo criminale:</strong>
+  <%= @group.gruppo_criminale %>
+</p>
+
+<p>
+  <strong>Note gruppo:</strong>
+  <%= @group.note_gruppo %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

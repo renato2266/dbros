@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cognome_nome: MyString
+  luogo_nascita: MyString
+  data_nascita: 2013-11-18
+  cod_fiscale: MyString
+  residenza: MyString
+  via: MyString
+  domicilio: MyString
+  cittadinanza: MyString
+  professione: MyString
+  soprannome: MyString
+  alias: MyString
+  note_generali: MyText
+  ambit_id: 
+  area_id: 
+  group_id: 
+
+two:
+  cognome_nome: MyString
+  luogo_nascita: MyString
+  data_nascita: 2013-11-18
+  cod_fiscale: MyString
+  residenza: MyString
+  via: MyString
+  domicilio: MyString
+  cittadinanza: MyString
+  professione: MyString
+  soprannome: MyString
+  alias: MyString
+  note_generali: MyText
+  ambit_id: 
+  area_id: 
+  group_id: 

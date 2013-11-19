@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cognome nome:</strong>
+  <%= @name.cognome_nome %>
+</p>
+
+<p>
+  <strong>Luogo nascita:</strong>
+  <%= @name.luogo_nascita %>
+</p>
+
+<p>
+  <strong>Data nascita:</strong>
+  <%= @name.data_nascita %>
+</p>
+
+<p>
+  <strong>Cod fiscale:</strong>
+  <%= @name.cod_fiscale %>
+</p>
+
+<p>
+  <strong>Residenza:</strong>
+  <%= @name.residenza %>
+</p>
+
+<p>
+  <strong>Via:</strong>
+  <%= @name.via %>
+</p>
+
+<p>
+  <strong>Domicilio:</strong>
+  <%= @name.domicilio %>
+</p>
+
+<p>
+  <strong>Cittadinanza:</strong>
+  <%= @name.cittadinanza %>
+</p>
+
+<p>
+  <strong>Professione:</strong>
+  <%= @name.professione %>
+</p>
+
+<p>
+  <strong>Soprannome:</strong>
+  <%= @name.soprannome %>
+</p>
+
+<p>
+  <strong>Alias:</strong>
+  <%= @name.alias %>
+</p>
+
+<p>
+  <strong>Note generali:</strong>
+  <%= @name.note_generali %>
+</p>
+
+<p>
+  <strong>Ambit:</strong>
+  <%= @ambit.ambito_criminale %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @area.area_criminale %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @group.gruppo_criminale %>
+</p>
+
+<p>
+<%= image_tag @name.photo.url %>
+<%= image_tag @name.photo.url(:medium) %>
+<%= image_tag @name.photo.url(:thumb) %>
+
+
+</p>
+
+
+<%= link_to 'Edit', edit_name_path(@name) %> |
+<%= link_to 'Back', names_path %>

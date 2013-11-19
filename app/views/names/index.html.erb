@@ -1,0 +1,41 @@
+<h1>Listing names</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cognome nome</th>
+      <th>Luogo nascita</th>
+      <th>Data nascita</th>
+      <th>Residenza</th>
+      <th>Cittadinanza</th>
+      <th>Ambit crim.</th>
+      <th>Area crim.</th>
+      <th>Ass. crim</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @names.each do |name| %>
+      <tr>
+        <td><%= name.cognome_nome %></td>
+        <td><%= name.luogo_nascita %></td>
+        <td><%= name.data_nascita %></td>
+        <td><%= name.residenza %></td>
+        <td><%= name.cittadinanza %></td>
+        <td><%= name.ambit.ambito_criminale %></td>
+        <td><%= name.area.area_criminale %></td>
+        <td><%= name.group.gruppo_criminale %></td>
+        <td><%= link_to 'Show', name %></td>
+        <td><%= link_to 'Edit', edit_name_path(name) %></td>
+        <td><%= link_to 'Destroy', name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Name', new_name_path %>
