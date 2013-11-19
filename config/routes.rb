@@ -1,5 +1,7 @@
 Dbros::Application.routes.draw do
 
+  resources :fascicles
+
   resources :names
 
   resources :groups

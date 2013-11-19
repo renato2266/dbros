@@ -7,6 +7,8 @@ class NamesController < ApplicationController
     @names = Name.all
 
 
+
+
   end
 
   # GET /names/1
@@ -16,6 +18,7 @@ class NamesController < ApplicationController
 	@ambit = @name.ambit
     @area = @name.area
 	@group = @name.group
+	@fascicles = @name.fascicles
   end
 
   # GET /names/new

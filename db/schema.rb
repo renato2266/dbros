@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118125225) do
+ActiveRecord::Schema.define(version: 20131119151111) do
 
   create_table "ambits", force: true do |t|
     t.string   "ambito_criminale"
@@ -32,6 +32,27 @@ ActiveRecord::Schema.define(version: 20131118125225) do
     t.string   "associazione_criminale"
     t.text     "note_associazione"
     t.integer  "area_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fascicles", force: true do |t|
+    t.integer  "numero"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fascicles_groups", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "fascicle_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fascicles_names", force: true do |t|
+    t.integer  "name_id"
+    t.integer  "fascicle_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

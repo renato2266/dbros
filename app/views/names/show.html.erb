@@ -62,25 +62,47 @@
 
 <p>
   <strong>Ambit:</strong>
-  <%= @ambit.ambito_criminale %>
+  <% if @ambit.nil? %>
+          Nil!
+  <% else %>
+          <b> <%=h @ambit.ambito_criminale%></b>
+  <%end%>
 </p>
 
 <p>
   <strong>Area:</strong>
-  <%= @area.area_criminale %>
+  <%if @area.nil?%>
+		Nil!
+  <%else%>
+		<%= @area.area_criminale %>
+  <%end%>
 </p>
 
 <p>
   <strong>Group:</strong>
+<%if @group.nil?%>
+		Nil!
+  <%else%>
   <%= @group.gruppo_criminale %>
+  <%end%>
+</p>
+
+<p>
+	<% if @fascicles.nil? %>
+      Nil!
+    <% else %>
+
+	<% @fascicles.each do |fascicle| %>
+	Numero fascicolo:
+      <%= link_to fascicle.numero, :controller => :fascicles, :action => :show, :id => fascicle.id %><br/>
+	<%end%>
+	<%end%>
 </p>
 
 <p>
 <%= image_tag @name.photo.url %>
 <%= image_tag @name.photo.url(:medium) %>
 <%= image_tag @name.photo.url(:thumb) %>
-
-
 </p>
 
 

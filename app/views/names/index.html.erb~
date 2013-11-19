@@ -23,11 +23,23 @@
         <td><%= name.cognome_nome %></td>
         <td><%= name.luogo_nascita %></td>
         <td><%= name.data_nascita %></td>
-        <td><%= name.residenza %></td>>
+        <td><%= name.residenza %></td>
         <td><%= name.cittadinanza %></td>
+		<%if name.ambit.nil?%>
+		<td>Nil!</td>
+		<%else%>
         <td><%= name.ambit.ambito_criminale %></td>
-        <td><%= name.area.area_criminale %></td>
-        <td><%= name.group.gruppo_criminale %></td>
+		<%end%>
+		<%if name.area.nil?%>
+		<td>Nil!</td>
+		<%else%>
+        <td><%= name.area %></td>
+		<%end%>
+		<%if name.group.nil?%>
+		<td>Nil!</td>
+		<%else%>
+		<td><%= name.group %></td>
+		<%end%>
         <td><%= link_to 'Show', name %></td>
         <td><%= link_to 'Edit', edit_name_path(name) %></td>
         <td><%= link_to 'Destroy', name, method: :delete, data: { confirm: 'Are you sure?' } %></td>

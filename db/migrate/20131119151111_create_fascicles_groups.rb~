@@ -1,0 +1,6 @@
+class CreateFasciclesGroups < ActiveRecord::Migration
+  def change
+    create_table :fascicles_groups do |t|
+    end
+  end
+end
