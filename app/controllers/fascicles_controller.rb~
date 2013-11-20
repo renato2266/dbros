@@ -11,6 +11,9 @@ class FasciclesController < ApplicationController
   # GET /fascicles/1.json
   def show
      @names = @fascicle.names
+     @groups = @fascicle.groups
+     @magazines = @fascicle.magazines
+     @unions = @fascicle.unions
   end
 
   # GET /fascicles/new
@@ -70,6 +73,6 @@ class FasciclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fascicle_params
-      params.require(:fascicle).permit(:numero, :note, :name_ids, :group_ids)
+      params.require(:fascicle).permit(:numero, :note, :name_ids, :group_ids, :magazine_ids, union_ids,)
     end
 end

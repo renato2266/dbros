@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119151111) do
+ActiveRecord::Schema.define(version: 20131120140751) do
 
   create_table "ambits", force: true do |t|
     t.string   "ambito_criminale"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 20131119151111) do
     t.datetime "updated_at"
   end
 
+  create_table "dossiers", force: true do |t|
+    t.integer  "numero"
+    t.date     "data"
+    t.text     "oggetto"
+    t.text     "testo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "documento_file_name"
+    t.string   "documento_content_type"
+    t.integer  "documento_file_size"
+    t.datetime "documento_updated_at"
+  end
+
   create_table "fascicles", force: true do |t|
     t.integer  "numero"
     t.text     "note"
@@ -50,9 +63,23 @@ ActiveRecord::Schema.define(version: 20131119151111) do
     t.datetime "updated_at"
   end
 
+  create_table "fascicles_magazines", force: true do |t|
+    t.integer  "magazine_id"
+    t.integer  "fascicle_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fascicles_names", force: true do |t|
     t.integer  "name_id"
     t.integer  "fascicle_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fascicles_unions", force: true do |t|
+    t.integer  "fascicle_id"
+    t.integer  "union_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,6 +90,22 @@ ActiveRecord::Schema.define(version: 20131119151111) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "magazines", force: true do |t|
+    t.string   "name_magazine"
+    t.date     "data_fondazione"
+    t.string   "luogo_stampa"
+    t.integer  "area_id"
+    t.integer  "union_id"
+    t.integer  "group_id"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "magazines", ["area_id"], name: "index_magazines_on_area_id", using: :btree
+  add_index "magazines", ["group_id"], name: "index_magazines_on_group_id", using: :btree
+  add_index "magazines", ["union_id"], name: "index_magazines_on_union_id", using: :btree
 
   create_table "names", force: true do |t|
     t.string   "cognome_nome"
@@ -91,5 +134,16 @@ ActiveRecord::Schema.define(version: 20131119151111) do
   add_index "names", ["ambit_id"], name: "index_names_on_ambit_id", using: :btree
   add_index "names", ["area_id"], name: "index_names_on_area_id", using: :btree
   add_index "names", ["group_id"], name: "index_names_on_group_id", using: :btree
+
+  create_table "unions", force: true do |t|
+    t.string   "denominazione"
+    t.string   "sede"
+    t.integer  "area_id"
+    t.text     "descrizione"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "unions", ["area_id"], name: "index_unions_on_area_id", using: :btree
 
 end

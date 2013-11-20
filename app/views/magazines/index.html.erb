@@ -1,0 +1,39 @@
+<h1>Listing magazines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name magazine</th>
+      <th>Data fondazione</th>
+      <th>Luogo stampa</th>
+      <th>Area</th>
+      <th>Union</th>
+      <th>Group</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @magazines.each do |magazine| %>
+      <tr>
+        <td><%= magazine.name_magazine %></td>
+        <td><%= magazine.data_fondazione %></td>
+        <td><%= magazine.luogo_stampa %></td>
+        <td><%= magazine.area %></td>
+        <td><%= magazine.union %></td>
+        <td><%= magazine.group %></td>
+        <td><%= magazine.note %></td>
+        <td><%= link_to 'Show', magazine %></td>
+        <td><%= link_to 'Edit', edit_magazine_path(magazine) %></td>
+        <td><%= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Magazine', new_magazine_path %>

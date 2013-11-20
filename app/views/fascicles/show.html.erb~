@@ -10,14 +10,34 @@
     <% @names.each do |name| %>
       <li><%= link_to name.cognome_nome, :controller => :names, :action => :show, :id => name.id %></li>
     <% end %>
-  </p>
+</p>
 
 <p>
 <strong>Elenco Ass. Crim.</strong>
     <% @groups.each do |group| %>
       <li><%= link_to group.gruppo_criminale, :controller => :groups, :action => :show, :id => group.id %></li>
     <% end %>
-  </p>
+</p>
+
+<p>
+<strong>Riviste</strong>
+    <% @magazines.each do |magazine| %>
+      <li><%= link_to magazine.name_magazine, :controller => :magazines, :action => :show, :id => magazine.id %></li>
+    <% end %>
+</p>
+<p>
+<strong>Riviste</strong>
+    <% @magazines.each do |magazine| %>
+      <li><%= link_to magazine.name_magazine, :controller => :magazines, :action => :show, :id => magazine.id %></li>
+    <% end %>
+</p
+
+<p>
+<strong>Associazioni</strong>
+    <% @unions.each do |union| %>
+      <li><%= link_to union.denominazione, :controller => :unions, :action => :show, :id => union.id %></li>
+    <% end %>
+</p
 
 <p>
   <strong>Note:</strong>

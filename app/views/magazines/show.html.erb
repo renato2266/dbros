@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name magazine:</strong>
+  <%= @magazine.name_magazine %>
+</p>
+
+<p>
+  <strong>Data fondazione:</strong>
+  <%= @magazine.data_fondazione %>
+</p>
+
+<p>
+  <strong>Luogo stampa:</strong>
+  <%= @magazine.luogo_stampa %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @magazine.area %>
+</p>
+
+<p>
+  <strong>Union:</strong>
+  <%= @magazine.union %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @magazine.group %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @magazine.note %>
+</p>
+
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<%= link_to 'Back', magazines_path %>

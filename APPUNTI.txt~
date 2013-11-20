@@ -1,0 +1,3 @@
+APPUNTI:
+
+rails g migration createFasciclesGroups

@@ -1,5 +1,11 @@
 Dbros::Application.routes.draw do
 
+  resources :unions
+
+  resources :magazines
+
+  resources :dossiers
+
   resources :fascicles
 
   resources :names

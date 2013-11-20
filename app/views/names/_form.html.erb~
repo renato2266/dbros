@@ -75,7 +75,7 @@
     <%= f.collection_select :group_id, Group.all, :id, :gruppo_criminale, :include_blank=>true, :prompt => 'select associazione crim.' %>
   </div>
 
-<div class="actions">
+<div class="field">
 	<%= f.file_field :photo %>
 </div>
   <div class="actions">

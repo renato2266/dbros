@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  denominazione: MyString
+  sede: MyString
+  area_id: 
+  descrizione: MyText
+
+two:
+  denominazione: MyString
+  sede: MyString
+  area_id: 
+  descrizione: MyText

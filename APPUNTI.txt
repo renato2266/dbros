@@ -1,0 +1,6 @@
+APPUNTI:
+
+rails g migration createFasciclesGroups
+
+rails generate scaffold Name cognome_nome:string luogo_nascita:string data_nascita:date cod_fiscale:string residenza:string via:string domicilio:string cittadinanza:string professione:string soprannome:string alias:string note_generali:text ambit:belongs_to area:belongs_to group:belongs_to
+

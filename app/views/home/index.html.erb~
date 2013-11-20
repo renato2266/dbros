@@ -1,14 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
 <h1 align = "center" style= "color:#a21919">Database Ros Brescia</h1> <br>
 
 
-  <h2 align = "right"><strong>You are logged in as </strong></h2>
-  <p align = "right"></p>
-
-  <p align = "right"><strong>You are currently not logged in.</strong></p>
-  <p align = "right">
-    <%= link_to 'Login', login_path %> <br/> </p>
 
 
+
+
+
+<p style="margin-left:50px">
+
+<%= link_to  (image_tag '/images/name_off.png', :mouseover => '/images/name_on.png'), :controller => 'names', :action=> 'index'%>
+
+
+<%= link_to  (image_tag '/images/fascicoli_off.png', :mouseover => '/images/fascicoli_on.png'), :controller => 'fascicles', :action=> 'index'%>
+<
+<h2 style="margin-left:50px"> Area Admin </h2>
+<p style="margin-left:50px">
+<%= link_to  (image_tag  '/images/ambito.png'), :controller => 'ambits', :action=> 'index'%>
+<%= link_to  (image_tag '/images/area.png'), :controller => 'areas', :action=> 'index'%>
+<%= link_to  (image_tag '/images/ass_crim.png'), :controller => 'groups', :action=> 'index'%>
+
+>
+</p>
+  

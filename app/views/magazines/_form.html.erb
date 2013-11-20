@@ -1,0 +1,45 @@
+<%= form_for(@magazine) do |f| %>
+  <% if @magazine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@magazine.errors.count, "error") %> prohibited this magazine from being saved:</h2>
+
+      <ul>
+      <% @magazine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_magazine %><br>
+    <%= f.text_field :name_magazine %>
+  </div>
+  <div class="field">
+    <%= f.label :data_fondazione %><br>
+    <%= f.date_select :data_fondazione %>
+  </div>
+  <div class="field">
+    <%= f.label :luogo_stampa %><br>
+    <%= f.text_field :luogo_stampa %>
+  </div>
+  <div class="field">
+    <%= f.label :area_id %><br>
+    <%= f.text_field :area_id %>
+  </div>
+  <div class="field">
+    <%= f.label :union_id %><br>
+    <%= f.text_field :union_id %>
+  </div>
+  <div class="field">
+    <%= f.label :group_id %><br>
+    <%= f.text_field :group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

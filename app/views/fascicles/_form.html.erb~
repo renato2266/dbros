@@ -23,8 +23,23 @@
 	<div class="field">
     <%= f.label :name %>
 	<%= f.collection_select :name_ids, Name.all, :id, :cognome_nome, :include_blank=>true, :multiple => true %>
-
 	</div>
+
+	<div class="field">
+    <%= f.label :group %>
+	<%= f.collection_select :group_ids, Group.all, :id, :gruppo_criminale, :include_blank=>true, :multiple => true %>
+	</div>
+
+	<div class="field">
+    <%= f.label :magazine %>
+	<%= f.collection_select :magazine_ids, Magazine.all, :id, :name_magazine, :include_blank=>true, :multiple => true %>
+	</div>
+
+	<div class="field">
+	<%= f.label :union %><br />
+	<%= f.collection_select :union_ids, Union.all, :id, :denominazione, {}, :multiple => true%>
+
+ </div>
 
   <div class="actions">
     <%= f.submit %>

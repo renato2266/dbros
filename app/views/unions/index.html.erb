@@ -1,0 +1,33 @@
+<h1>Listing unions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Denominazione</th>
+      <th>Sede</th>
+      <th>Area</th>
+      <th>Descrizione</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unions.each do |union| %>
+      <tr>
+        <td><%= union.denominazione %></td>
+        <td><%= union.sede %></td>
+        <td><%= union.area %></td>
+        <td><%= union.descrizione %></td>
+        <td><%= link_to 'Show', union %></td>
+        <td><%= link_to 'Edit', edit_union_path(union) %></td>
+        <td><%= link_to 'Destroy', union, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Union', new_union_path %>

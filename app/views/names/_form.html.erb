@@ -64,8 +64,8 @@
   <div class="field">
     <%= f.label :ambit_id %><br>
     <%= f.collection_select :ambit_id, Ambit.all, :id, :ambito_criminale, :include_blank=>true, :prompt => 'select ambito crim.' %>
-
   </div>
+
   <div class="field">
     <%= f.label :area_id %><br>
     <%= f.collection_select :area_id, Area.all, :id, :area_criminale, :include_blank=>true, :prompt =>'select area crim.' %>

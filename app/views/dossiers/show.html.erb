@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p><b>
+	<%= link_to "Visualizza documento", @dossier.documento.url%>
+	</b></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @dossier.numero %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @dossier.data %>
+</p>
+
+<p>
+  <strong>Oggetto:</strong>
+  <%= @dossier.oggetto %>
+</p>
+
+<p>
+  <strong>Testo:</strong>
+  <%= @dossier.testo %>
+</p>
+
+
+<%= link_to 'Edit', edit_dossier_path(@dossier) %> |
+<%= link_to 'Back', dossiers_path %>

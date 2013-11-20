@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Denominazione:</strong>
+  <%= @union.denominazione %>
+</p>
+
+<p>
+  <strong>Sede:</strong>
+  <%= @union.sede %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @union.area.area_criminale %>
+</p>
+
+<p>
+  <strong>Descrizione:</strong>
+  <%= @union.descrizione %>
+</p>
+
+<%= link_to 'Edit', edit_union_path(@union) %> |
+<%= link_to 'Back', unions_path %>

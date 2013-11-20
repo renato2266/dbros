@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_magazine: MyString
+  data_fondazione: 2013-11-20
+  luogo_stampa: MyString
+  area_id: 
+  union_id: 
+  group_id: 
+  note: MyText
+
+two:
+  name_magazine: MyString
+  data_fondazione: 2013-11-20
+  luogo_stampa: MyString
+  area_id: 
+  union_id: 
+  group_id: 
+  note: MyText
