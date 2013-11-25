@@ -1,0 +1,22 @@
+  <div id="container">  
+  
+    <% flash.each do |name, msg| %>  
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>  
+    <% end %>  
+  
+    <div id="side">  
+      <strong>Pages</strong>  
+      <ul>  
+        <li><%= link_to "Home", root_path %></li>  
+        <li><%= link_to "Anagrafica", names_path %></li>
+		<li><%= link_to "Documenti", dossiers_path %></li>
+		<li><%= link_to "Pubblicazioni", magazines_path %></li>
+		<li><%= link_to "Società", unions_path %></li>
+		<li><%= link_to "Documenti", dossiers_path %></li>
+		<li><%= link_to "Fascicoli", fascicles_path %></li>
+		<li><%= link_to "Ass. Crim.", groups_path %></li>
+		<li><%= link_to "Area Crim.", areas_path %></li>
+		<li><%= link_to "Ambito Crim.", ambits_path %></li>
+  
+      </ul>  
+    </div>

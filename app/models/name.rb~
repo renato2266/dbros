@@ -10,9 +10,23 @@ class Name < ActiveRecord::Base
 
   has_attached_file :photo, 
 	:styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-	:default_url => "/images/  missing.png", 
+	:default_url => "/assets/missing_thumb.png", 
 	:url  => "/assets/avatar/:id/:style/:basename.:extension", 
 	:path => ":rails_root/public/assets/avatar/:id/:style/:basename.:extension"
+
+ def self.search(search)
+   if search
+      find(:all, :conditions => ['cognome_nome LIKE ? or luogo_nascita LIKE ? or data_nascita LIKE ? or residenza LIKE ?', "%#{search}%","%#{search}%",
+          "%#{search}%", "%#{search}%",], :order => 'cognome_nome ASC')
+    else
+     find(:all, :order => 'cognome_nome ASC')
+    end
+ end
+
+
+
+ 
+
 
 
 

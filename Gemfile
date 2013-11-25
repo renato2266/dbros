@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'paperclip', '3.5.2'
 gem 'prawnto', '0.1.1'
 gem 'will_paginate', '3.0.5'
-gem 'restful-authentication', '1.2.1'
+#gem 'restful-authentication', '1.2.1'
+#gem 'meta_where'
 #gem 'activeadmin'
 
 

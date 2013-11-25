@@ -88,11 +88,21 @@
 </p>
 
 <p>
+	<% if @fascicles.nil? %>
+      Nil!
+    <% else %>
+
+	<% @fascicles.each do |fascicle| %>
+	Numero fascicolo:
+      <%= link_to fascicle.numero, :controller => :fascicles, :action => :show, :id => fascicle.id %><br/>
+	<%end%>
+	<%end%>
+</p>
+
+<p>
 <%= image_tag @name.photo.url %>
 <%= image_tag @name.photo.url(:medium) %>
 <%= image_tag @name.photo.url(:thumb) %>
-
-
 </p>
 
 

@@ -1,0 +1,25 @@
+// Place all the styles related to the Names controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$main-color: #03507B;  
+  
+#header {  
+  background-color: $main-color;  
+  color: #FFF;  
+  padding: 4px 100px;  
+  border-bottom: solid 5px #00395A;  
+  
+    h1 {   
+        font-size: 30px;   
+    }  
+}  
+  
+a {  
+  color: $main-color;  
+  text-decoration: none;  
+  
+  &:hover {   
+   text-decoration: underline;  
+  }  
+} 

@@ -97,7 +97,6 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    restful-authentication (1.2.1)
     ruby-rc4 (0.1.5)
     sass (3.2.12)
     sass-rails (4.0.1)
@@ -143,7 +142,6 @@ DEPENDENCIES
   paperclip (= 3.5.2)
   prawnto (= 0.1.1)
   rails (= 4.0.1)
-  restful-authentication (= 1.2.1)
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks

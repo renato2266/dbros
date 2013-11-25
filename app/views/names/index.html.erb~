@@ -1,4 +1,14 @@
+
 <h1>Listing names</h1>
+
+<%= form_tag names_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :cognome_nome => nil %>
+<% end %>
+
+
+
+
 
 <table>
   <thead>
@@ -11,6 +21,7 @@
       <th>Ambit crim.</th>
       <th>Area crim.</th>
       <th>Ass. crim</th>
+      <th>Foto</th>
       <th></th>
       <th></th>
       <th></th>
@@ -33,13 +44,15 @@
 		<%if name.area.nil?%>
 		<td>Nil!</td>
 		<%else%>
-        <td><%= name.area %></td>
+        <td><%= name.area.area_criminale %></td>
 		<%end%>
 		<%if name.group.nil?%>
 		<td>Nil!</td>
 		<%else%>
-		<td><%= name.group %></td>
+		<td><%= name.group.gruppo_criminale %></td>
 		<%end%>
+		
+		<td><%= image_tag name.photo.url(:thumb) %></td>
         <td><%= link_to 'Show', name %></td>
         <td><%= link_to 'Edit', edit_name_path(name) %></td>
         <td><%= link_to 'Destroy', name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,7 +60,8 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
+
+ 
 
 <%= link_to 'New Name', new_name_path %>
