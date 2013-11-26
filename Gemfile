@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
@@ -16,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -29,12 +32,16 @@ gem 'jbuilder', '~> 1.2'
 
 #gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'paperclip', '3.5.2'
+
+
 gem 'prawnto', '0.1.1'
 gem 'will_paginate', '3.0.5'
 #gem 'restful-authentication', '1.2.1'
 #gem 'meta_where'
 #gem 'activeadmin'
-
+#gem 'bootstrap-sass'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
