@@ -23,6 +23,7 @@ class NamesController < ApplicationController
     @area = @name.area
 	@group = @name.group
 	@fascicles = @name.fascicles
+	@dossiers = @name.dossiers
   end
 
   # GET /names/new
@@ -83,7 +84,7 @@ class NamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def name_params
-      params.require(:name).permit(:cognome_nome, :luogo_nascita, :data_nascita, :cod_fiscale, :residenza, :via, :domicilio, :cittadinanza, :professione, :soprannome, :alias, :note_generali, :ambit_id, :area_id, :group_id, :photo, )
+      params.require(:name).permit(:cognome_nome, :luogo_nascita, :data_nascita, :cod_fiscale, :residenza, :via, :domicilio, :cittadinanza, :professione, :soprannome, :alias, :note_generali, :ambit_id, :area_id, :group_id, :photo, :name_ids => [] )
     end
 end
 

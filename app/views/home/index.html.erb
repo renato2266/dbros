@@ -1,7 +1,35 @@
 <h1 align = "center" style= "color:#a21919">Database Ros Brescia</h1> <br>
 
 
+<div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Action
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+  </ul>
+</div>
 
+<div class="btn-group">
+  <button class="btn btn-large">Anagrafica</button>
+  <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <%=link_to "Index", :controller => 'names', :action=> 'index'%>
+  </ul>
+</div>
+<div class="btn-group">
+  <button class="btn btn-large">Fascicoli</button>
+  <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <%=link_to "Index", :controller => 'fascicles', :action=> 'index'%>
+  </ul>
+
+</div>
 
 
 

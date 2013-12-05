@@ -1,0 +1,8 @@
+/home/renato/.local/share/Trash/files/dbros/log/development.log
+/home/renato/VirtualBox VMs/zentyal/zentyal.vdi
+/home/renato/VirtualBox VMs/Windows7/Windows7.vdi
+/home/renato/crypt
+/home/renato/.local/share/Trash/files/dbros/log/development.log
+/home/renato/VirtualBox VMs/zentyal/zentyal.vdi
+/home/renato/VirtualBox VMs/Windows7/Windows7.vdi
+/home/renato/crypt

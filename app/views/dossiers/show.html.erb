@@ -1,29 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Dossier -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p><b>
-	<%= link_to "Visualizza documento", @dossier.documento.url%>
-	</b></p>
-
-<p>
-  <strong>Numero:</strong>
-  <%= @dossier.numero %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @dossier.data %>
-</p>
-
-<p>
-  <strong>Oggetto:</strong>
-  <%= @dossier.oggetto %>
-</p>
-
-<p>
-  <strong>Testo:</strong>
-  <%= @dossier.testo %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:numero) %>:</strong></dt>
+  <dd><%= @dossier.numero %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
+  <dd><%= @dossier.data %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:oggetto) %>:</strong></dt>
+  <dd><%= @dossier.oggetto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:documento_file_name) %>:</strong></dt>
+  <dd><% @names.each do |name| %>
+      <li><%= link_to name.cognome_nome, :controller => :names, :action => :show, :id => name.id %></li>
+    <% end %></dd>
+  <dd><%= link_to "Visualizza documento", @dossier.documento.url%></dd>
+  <dt><strong><%= model_class.human_attribute_name "Elenco soggetti" %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:testo) %>:</strong></dt>
+  <dd><%= @dossier.testo %></dd>
 
 
-<%= link_to 'Edit', edit_dossier_path(@dossier) %> |
-<%= link_to 'Back', dossiers_path %>
+
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              dossiers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_dossier_path(@dossier), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              dossier_path(@dossier),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

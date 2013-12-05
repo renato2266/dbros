@@ -1,0 +1,6 @@
+class CreateDossiersNames < ActiveRecord::Migration
+  def change
+    create_table :dossiers_names do |t|
+    end
+  end
+end

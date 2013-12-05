@@ -1,7 +1,32 @@
 <h1 align = "center" style= "color:#a21919">Database Ros Brescia</h1> <br>
 
 
+<div class="btn-group">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    Action
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+  </ul>
+</div>
 
+<div class="btn-group">
+  <button class="btn btn-large">Anagrafica</button>
+  <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <%=link_to "Index", :controller => 'names', :action=> 'index'%>
+  </ul>
+  <button class="btn btn-large">Fascicoli</button>
+  <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <%=link_to "Index", :controller => 'fascicles', :action=> 'index'%>
+  </ul>
+</div>
 
 
 
@@ -12,13 +37,13 @@
 
 
 <%= link_to  (image_tag '/images/fascicoli_off.png', :mouseover => '/images/fascicoli_on.png'), :controller => 'fascicles', :action=> 'index'%>
-<
+
 <h2 style="margin-left:50px"> Area Admin </h2>
 <p style="margin-left:50px">
 <%= link_to  (image_tag  '/images/ambito.png'), :controller => 'ambits', :action=> 'index'%>
 <%= link_to  (image_tag '/images/area.png'), :controller => 'areas', :action=> 'index'%>
 <%= link_to  (image_tag '/images/ass_crim.png'), :controller => 'groups', :action=> 'index'%>
 
->
+
 </p>
   

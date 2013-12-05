@@ -4,6 +4,7 @@ class Name < ActiveRecord::Base
   belongs_to :group
 
   has_and_belongs_to_many :fascicles
+  has_and_belongs_to_many :dossiers
 
 
 

@@ -10,7 +10,7 @@ class Name < ActiveRecord::Base
 
   has_attached_file :photo, 
 	:styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-	:default_url => "/assets/missing_thumb.png", 
+	:default_url => "/assets/missing_thum.png", 
 	:url  => "/assets/avatar/:id/:style/:basename.:extension", 
 	:path => ":rails_root/public/assets/avatar/:id/:style/:basename.:extension"
 

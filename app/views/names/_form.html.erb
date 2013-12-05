@@ -1,84 +1,104 @@
-<%= form_for(@name,  :html => { :multipart => true }) do |f| %>
-
-
-  <% if @name.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@name.errors.count, "error") %> prohibited this name from being saved:</h2>
-
-      <ul>
-      <% @name.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @name, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :cognome_nome, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cognome_nome, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :luogo_nascita, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :luogo_nascita, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :data_nascita, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :data_nascita, :include_blank => true, :start_year => Time.now.year , :end_year=> Time.now.year - 80, :use_month_numbers => true  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cod_fiscale, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cod_fiscale, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :residenza, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :residenza, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :via, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :via, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :domicilio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :domicilio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cittadinanza, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cittadinanza, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :professione, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :professione, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :soprannome, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :soprannome, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :alias, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :alias, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :note_generali, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :note_generali, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ambit_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :ambit_id, Ambit.all, :id, :ambito_criminale, :include_blank=>true, :prompt => 'select ambito crim.' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :area_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :area_id, Area.all, :id, :area_criminale, :include_blank=>true, :prompt =>'select area crim.' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :group_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :group_id, Group.all, :id, :gruppo_criminale, :include_blank=>true, :prompt => 'select associazione crim.' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :photo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :photo %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :cognome_nome %><br>
-    <%= f.text_field :cognome_nome %>
-  </div>
-  <div class="field">
-    <%= f.label :luogo_nascita %><br>
-    <%= f.text_field :luogo_nascita %>
-  </div>
-  <div class="field">
-	<%= f.label :data_nascita %>
-	<%= f.date_select :data_nascita, :include_blank => true, :start_year => Time.now.year , :end_year=> Time.now.year - 80, :use_month_numbers => true  %>
-  </div>
-  <div class="field">
-    <%= f.label :cod_fiscale %><br>
-    <%= f.text_field :cod_fiscale %>
-  </div>
-  <div class="field">
-    <%= f.label :residenza %><br>
-    <%= f.text_field :residenza %>
-  </div>
-  <div class="field">
-    <%= f.label :via %><br>
-    <%= f.text_field :via %>
-  </div>
-  <div class="field">
-    <%= f.label :domicilio %><br>
-    <%= f.text_field :domicilio %>
-  </div>
-  <div class="field">
-    <%= f.label :cittadinanza %><br>
-    <%= f.text_field :cittadinanza %>
-  </div>
-  <div class="field">
-    <%= f.label :professione %><br>
-    <%= f.text_field :professione %>
-  </div>
-  <div class="field">
-    <%= f.label :soprannome %><br>
-    <%= f.text_field :soprannome %>
-  </div>
-  <div class="field">
-    <%= f.label :alias %><br>
-    <%= f.text_field :alias %>
-  </div>
-  <div class="field">
-    <%= f.label :note_generali %><br>
-    <%= f.text_area :note_generali %>
-  </div>
-  <div class="field">
-    <%= f.label :ambit_id %><br>
-    <%= f.collection_select :ambit_id, Ambit.all, :id, :ambito_criminale, :include_blank=>true, :prompt => 'select ambito crim.' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :area_id %><br>
-    <%= f.collection_select :area_id, Area.all, :id, :area_criminale, :include_blank=>true, :prompt =>'select area crim.' %>
-  </div>
-  <div class="field">
-    <%= f.label :group_id %><br>
-    <%= f.collection_select :group_id, Group.all, :id, :gruppo_criminale, :include_blank=>true, :prompt => 'select associazione crim.' %>
-  </div>
-
-<div class="field">
-	<%= f.file_field :photo %>
-</div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                names_path, :class => 'btn' %>
   </div>
 <% end %>

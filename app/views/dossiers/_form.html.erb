@@ -1,38 +1,77 @@
-<%= form_for(@dossier) do |f| %>
-  <% if @dossier.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dossier.errors.count, "error") %> prohibited this dossier from being saved:</h2>
-
-      <ul>
-      <% @dossier.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @dossier, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :numero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :numero, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :data, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_field :data, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :oggetto, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :oggetto, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :testo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :testo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :documento_file_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :documento_file_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :documento_content_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :documento_content_type, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :documento_file_size, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :documento_file_size, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :documento_updated_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :documento_updated_at, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :numero %><br>
-    <%= f.number_field :numero %>
-  </div>
-  <div class="field">
-    <%= f.label :data %><br>
-    <%= f.date_select :data %>
-  </div>
-  <div class="field">
-    <%= f.label :oggetto %><br>
-    <%= f.text_area :oggetto %>
-  </div>
-  <div class="field">
-    <%= f.label :testo %><br>
-    <%= f.text_area :testo %>
+
+  <div class="control-group">
+    <%= f.label :name_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :name_ids, Name.all, :id, :cognome_nome, {}, {:multiple => true} %>
+    </div>
   </div>
 
-<div class="field">
-	<%= f.file_field :documento %>
-</div>
+  <div class="control-group">
+    <%= f.label :name_id, :class => 'control-label' %>
+    <div class="controls">
+		        <% for name in Name.find(:all) %>
+		          <%= check_box_tag "dossier[name_ids][]", name.id, @dossier.names.include?(name) %>
+		          <%= name.cognome_nome %> <%= name.luogo_nascita %> <%= name.data_nascita %>
+					<br/>	
+		       <%end%>
+    </div>
+  </div>
 
-  <div class="actions">
-    <%= f.submit %>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                dossiers_path, :class => 'btn' %>
   </div>
 <% end %>

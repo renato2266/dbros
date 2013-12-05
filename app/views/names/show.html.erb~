@@ -1,110 +1,109 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Cognome nome:</strong>
-  <%= @name.cognome_nome %>
-</p>
-
-<p>
-  <strong>Luogo nascita:</strong>
-  <%= @name.luogo_nascita %>
-</p>
-
-<p>
-  <strong>Data nascita:</strong>
-  <%= @name.data_nascita %>
-</p>
-
-<p>
-  <strong>Cod fiscale:</strong>
-  <%= @name.cod_fiscale %>
-</p>
-
-<p>
-  <strong>Residenza:</strong>
-  <%= @name.residenza %>
-</p>
-
-<p>
-  <strong>Via:</strong>
-  <%= @name.via %>
-</p>
-
-<p>
-  <strong>Domicilio:</strong>
-  <%= @name.domicilio %>
-</p>
-
-<p>
-  <strong>Cittadinanza:</strong>
-  <%= @name.cittadinanza %>
-</p>
-
-<p>
-  <strong>Professione:</strong>
-  <%= @name.professione %>
-</p>
-
-<p>
-  <strong>Soprannome:</strong>
-  <%= @name.soprannome %>
-</p>
-
-<p>
-  <strong>Alias:</strong>
-  <%= @name.alias %>
-</p>
-
-<p>
-  <strong>Note generali:</strong>
-  <%= @name.note_generali %>
-</p>
-
-<p>
-  <strong>Ambit:</strong>
-  <% if @ambit.nil? %>
-          Nil!
-  <% else %>
-          <b> <%=h @ambit.ambito_criminale%></b>
-  <%end%>
-</p>
-
-<p>
-  <strong>Area:</strong>
-  <%if @area.nil?%>
-		Nil!
-  <%else%>
-		<%= @area.area_criminale %>
-  <%end%>
-</p>
-
-<p>
-  <strong>Group:</strong>
-<%if @group.nil?%>
-		Nil!
-  <%else%>
-  <%= @group.gruppo_criminale %>
-  <%end%>
-</p>
-
-<p>
-	<% if @fascicles.nil? %>
-      Nil!
-    <% else %>
-
-	<% @fascicles.each do |fascicle| %>
-	Numero fascicolo:
-      <%= link_to fascicle.numero, :controller => :fascicles, :action => :show, :id => fascicle.id %><br/>
-	<%end%>
-	<%end%>
-</p>
-
-<p>
-<%= image_tag @name.photo.url %>
-<%= image_tag @name.photo.url(:medium) %>
-<%= image_tag @name.photo.url(:thumb) %>
-</p>
+<%- model_class = Name -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.titleize %></h3>
+</div>
 
 
-<%= link_to 'Edit', edit_name_path(@name) %> |
-<%= link_to 'Back', names_path %>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Scheda soggetto</a></li>
+    <li><a href="#tab2" data-toggle="tab">Documenti</a></li>
+     <li><a href="#tab3" data-toggle="tab">Gallery</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+
+<div class="row">
+  <div class="span9">
+
+    <div class="row-fluid">
+      <div class="span6">
+        
+        <div class="row-fluid">
+          <div class="span4 ">
+			<strong><%= model_class.human_attribute_name(:cognome_nome) %>:</strong> </br>
+			<strong><%= model_class.human_attribute_name(:luogo_nascita) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:data_nascita) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:cod_fiscale) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:residenza) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:via) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:domicilio) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:cittadinanza) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:professione) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:soprannome) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:alias) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:ambit_id) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:area_id) %>:</strong></br>
+			<strong><%= model_class.human_attribute_name(:group_id) %>:</strong></br>
+			<strong> Fascicolo nr. </strong></br>
+			<strong><%= model_class.human_attribute_name(:note_generali) %>:</strong></br>
+			</div>
+          <div class="span8">
+			<%= @name.cognome_nome %></br>
+			<%= @name.luogo_nascita %></br>
+			<%= @name.data_nascita %></br>
+			<%= @name.cod_fiscale %></br>
+			<%= @name.residenza %></br>
+			<%= @name.via %></br>
+			<%= @name.domicilio %></br>
+			<%= @name.cittadinanza %></br>
+			<%= @name.professione %></br>
+			<%= @name.soprannome %></br>
+			<%= @name.alias %></br>
+			<% if @name.ambit.nil? %> <%else%><%= @name.ambit.ambito_criminale %><%end%></br>
+			<% if @name.area.nil? %> <%else%> <%= @name.area.area_criminale %><%end%></br>
+			<% if @name.group.nil? %> <%else%><%= @name.group.gruppo_criminale %><%end%></br>
+			<% if @fascicles.nil? %>
+				Nil!
+			<% else %>
+				<% @fascicles.each do |fascicle| %>
+			<%= link_to fascicle.numero, :controller => :fascicles, :action => :show, :id => fascicle.id %>
+			<%end%></br>
+			<%end%></br>
+			<%= @name.note_generali %></br>
+			</div>
+        </div>
+      </div>
+      <div class="span6">
+		<%= image_tag @name.photo.url(:medium)  %>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="tab-pane" id="tab2">
+      <p>
+		<% if @dossiers.nil? %>
+				Nil!
+			<% else %>
+		<% @dossiers.each do |dossier|%>
+		<%= link_to "Documento", dossier, :controller => :dossiers, :action => :show, :id => dossier.id%>
+		<%= dossier.data%>
+		<%= dossier.oggetto%>
+		<%end%>
+		</p>
+    </div>
+
+    <div class="tab-pane" id="tab3">
+      <p>Howdy,</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              names_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_name_path(@name), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              name_path(@name),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -10,15 +10,20 @@ class DossiersController < ApplicationController
   # GET /dossiers/1
   # GET /dossiers/1.json
   def show
+	@names = @dossier.names
   end
 
   # GET /dossiers/new
   def new
     @dossier = Dossier.new
+    @names = Name.find(:all, :order => "cognome_nome ASC")
+@names = @dossier.names
   end
 
   # GET /dossiers/1/edit
   def edit
+    @names = Name.find(:all, :order => "cognome_nome ASC")
+@names = @dossier.names
   end
 
   # POST /dossiers
@@ -69,6 +74,6 @@ class DossiersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dossier_params
-      params.require(:dossier).permit(:numero, :data, :oggetto, :testo, :documento)
+      params.require(:dossier).permit(:numero, :data, :oggetto, :testo, :documento, :name_ids => [])
     end
 end
